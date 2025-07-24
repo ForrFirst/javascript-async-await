@@ -33,10 +33,15 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
-async function showJohnProfile() {
-  const johnProfile = await getJohnProfile();
-  console.log(johnProfile)
-  const johnorders = await getJohnOrders();
-  console.log(johnorders)
+async function asyncfunc(){
+  try {
+    const johnProfile = await getJohnProfile()
+    console.log(johnProfile)
+    const johnOrders = await getJohnOrders()
+    console.log(johnOrders)
+  }catch(error){
+    console.log(error)
+  }
 }
-showJohnProfile();
+
+asyncfunc()
